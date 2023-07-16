@@ -61,11 +61,13 @@
                     AnchorLayout:
                         anchor_y: 'top'
                         anchor_x: 'left'
-                        padding: 45, 0, 0, 0
+                        padding: [5, 10, max(topLBL.width - topLBL.texture_size[0], 10), 10]
                         Label:
+                            id: topLBL
                             size_hint_y: None
                             size_hint_x: None
-                            text: 'Top Right Area                    '
+                            text_size: max(self.width, 0), None
+                            text: 'Top Right Area    adfasdfasdfasdfasdfasdfasdfasd                '
                 AnchorLayout:
                     anchor_y: 'bottom'
                     anchor_x: 'right'
@@ -78,7 +80,20 @@
                     AnchorLayout:
                         anchor_y: 'top'
                         anchor_x: 'left'
+                        padding: [5, 10, max(lbl.width - lbl.texture_size[0], 10), 10]
                         Label:
+                            id: lbl
                             size_hint_y: None
                             size_hint_x: None
+                            text_size: max(self.width, 0), None
+                            text: 'Bottom Right Area'
+                    AnchorLayout:
+                        anchor_y: 'top'
+                        anchor_x: 'center'
+                        padding: [0, 10, max(btmLBL.width - btmLBL.texture_size[0], 10), 10]
+                        Label:
+                            id: btmLBL
+                            size_hint_y: None
+                            size_hint_x: None
+                            text_size: max(self.width, 0), None
                             text: 'Bottom Right Area'
