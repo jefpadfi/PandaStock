@@ -1,0 +1,84 @@
+<RootWidget>:
+    BoxLayout:
+        orientation: 'vertical'
+        ActionBar:
+            pos_hint: {'top': 1}
+            ActionView:
+                use_separator: True
+                ActionPrevious:
+                    title: ''
+                    app_icon: ''
+                    with_previous: False
+                    markup: True
+                    size_hint_x: None
+                    width: 0
+                ActionGroup:
+                    text: 'File'
+                    mode: 'spinner'
+                    dropdown_width: '175dp'
+                    ActionButton:
+                        text: 'Save'
+                    ActionButton:
+                        text: 'Close'
+                ActionGroup:
+                    text: 'About'
+                    mode: 'spinner'
+                    dropdown_width: '175dp'
+                    ActionButton:
+                        text: 'Updates'
+                    ActionButton:
+                        text: 'About PandaStock'
+        BoxLayout:
+            orientation: 'horizontal'
+            AnchorLayout:
+                anchor_y: 'center'
+                anchor_x: 'left'
+                size_hint_x: None
+                width: '200dp'
+                canvas.before:
+                    Color:
+                        rgba: 1, 0, 0, 1
+                    Line:
+                        rectangle: self.x, self.y, self.width, self.height
+                AnchorLayout:
+                    anchor_y: 'top'
+                    anchor_x: 'left'
+                    Label:
+                        size_hint_y: None
+                        size_hint_x: None
+                        text: 'Left Area'
+            BoxLayout:
+                orientation: 'vertical'
+                AnchorLayout:
+                    anchor_y: 'center'
+                    anchor_x: 'right'
+                    width: '200dp'
+                    canvas.before:
+                        Color:
+                            rgba: 1, 0, 0, 1
+                        Line:
+                            rectangle: self.x, self.y, self.width, self.height
+                    AnchorLayout:
+                        anchor_y: 'top'
+                        anchor_x: 'left'
+                        padding: 45, 0, 0, 0
+                        Label:
+                            size_hint_y: None
+                            size_hint_x: None
+                            text: 'Top Right Area                    '
+                AnchorLayout:
+                    anchor_y: 'bottom'
+                    anchor_x: 'right'
+                    width: '200dp'
+                    canvas.before:
+                        Color:
+                            rgba: 1, 0, 0, 1
+                        Line:
+                            rectangle: self.x, self.y, self.width, self.height
+                    AnchorLayout:
+                        anchor_y: 'top'
+                        anchor_x: 'left'
+                        Label:
+                            size_hint_y: None
+                            size_hint_x: None
+                            text: 'Bottom Right Area'
