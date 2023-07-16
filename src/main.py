@@ -4,12 +4,15 @@ from kivy.uix.boxlayout import BoxLayout
 
 Builder.load_file('main.kv')
 
+
 class RootWidget(BoxLayout):
     pass
 
-class PandaStock(App):    
+
+class PandaStock(App):
     def build(self):
         return RootWidget()
+
 
 if __name__ == '__main__':
     PandaStock().run()
