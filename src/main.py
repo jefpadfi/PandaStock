@@ -1,7 +1,7 @@
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.boxlayout import BoxLayout
-from .database import check_database_exists, create_connection, close_connection
+from database import check_database_exists, create_connection, close_connection, create_database
 
 Builder.load_file('main.kv')
 
@@ -16,6 +16,7 @@ class PandaStock(App):
             print("Database file exists.")
         else:
             print("Database file does not exist.")
+            create_database("panda_stocks.db")
         
         return RootWidget()
 
