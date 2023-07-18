@@ -43,9 +43,19 @@
                 AnchorLayout:
                     anchor_y: 'top'
                     anchor_x: 'left'
+                    size_hint_y: 1
                     Accordion:
                         id: portfolios
                         orientation: "vertical"
+                        content_size:"uniform"
+                AnchorLayout:
+                    anchor_x: "left"
+                    anchor_y: "bottom"
+                    Button:
+                        text: "Add Portfolio"
+                        size_hint_y: None
+                        height: 30
+                        spacing: 20
             BoxLayout:
                 orientation: 'vertical'
                 AnchorLayout:

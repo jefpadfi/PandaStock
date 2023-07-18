@@ -39,15 +39,13 @@ class RootWidget(BoxLayout):
                 
                 for stock in stocks:
                     if stock[2] == portfolio_name[0]:
-                        stock_info = Button(text=stock[1], on_release=lambda btn, id=stock[0]: self.load_stock_info(id))
+                        stock_info = Button(text=stock[1], size_hint_y=None, height=30, on_release=lambda btn, id=stock[0]: self.load_stock_info(id))
                         layout.add_widget(stock_info)
                 
                 item.add_widget(layout)
         else:
             item = AccordionItem(title="No Portfolios found")
             accordion.add_widget(item)
-            add_portfolio_btn = Button(text="Add Portfolio")
-            item.add_widget(add_portfolio_btn)
         
     def load_portfolio_names(self):
         # Create a connection to the database
