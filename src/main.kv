@@ -43,10 +43,9 @@
                 AnchorLayout:
                     anchor_y: 'top'
                     anchor_x: 'left'
-                    Label:
-                        size_hint_y: None
-                        size_hint_x: None
-                        text: 'Left Area'
+                    Accordion:
+                        id: portfolios
+                        orientation: "vertical"
             BoxLayout:
                 orientation: 'vertical'
                 AnchorLayout:
@@ -77,16 +76,6 @@
                             rgba: 1, 0, 0, 1
                         Line:
                             rectangle: self.x, self.y, self.width, self.height
-                    AnchorLayout:
-                        anchor_y: 'top'
-                        anchor_x: 'left'
-                        padding: [5, 10, max(lbl.width - lbl.texture_size[0], 10), 10]
-                        Label:
-                            id: lbl
-                            size_hint_y: None
-                            size_hint_x: None
-                            text_size: max(self.width, 0), None
-                            text: 'Bottom Right Area'
                     AnchorLayout:
                         anchor_y: 'top'
                         anchor_x: 'center'

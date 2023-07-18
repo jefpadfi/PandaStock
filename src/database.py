@@ -42,6 +42,18 @@ def create_tables(conn):
                             );
                         ''')
             
+            # Create StockPurchase table
+            cursor.execute('''
+                            CREATE TABLE IF NOT EXISTS StockPurchases (
+                                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                stock_id INTEGER,
+                                quantity INTEGER,
+                                price REAL,
+                                purchase_date DATE DEFAULT (datetime('now', 'localtime')),
+                                FOREIGN KEY (stock_id) REFERENCES Stock (id)
+                            );
+                        ''')
+            
         except sqlite3.Error as e:
             print(e)
     else:
@@ -64,3 +76,37 @@ def close_connection(conn):
     if conn:
         conn.close()
         print("Database connection closed.")
+
+# Retrieve all portfolio names from the database
+def get_portfolio_names(conn):
+    if conn:
+        try: 
+            cursor = conn.cursor()
+        
+            # Retrieve portfolio names
+            cursor.execute("SELECT id, name FROM Portfolio")
+            portfolios = cursor.fetchall()
+        
+            return portfolios
+        except sqlite3.Error as e:
+            print(e)
+    else:
+        print("No database connection available.")
+        return None
+
+# Retrieve all stocks for the accordion.
+def get_stock_names(conn):
+    if conn:
+        try: 
+            cursor = conn.cursor()
+        
+            # Retrieve portfolio names
+            cursor.execute("SELECT id, name, portfolio_id FROM Stock")
+            stocks = cursor.fetchall()
+        
+            return stocks
+        except sqlite3.Error as e:
+            print(e)
+    else:
+        print("No database connection available.")
+        return None
